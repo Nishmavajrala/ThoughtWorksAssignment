@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class ArrayType {
+    public static void main(String... aaa) {
+        Scanner sc = new Scanner(System.in);
+        String input[] = sc.nextLine().split(" ");
+        int[] temp= new int[input.length];
+        for (int i = 0; i < input.length; i++)
+            temp[i] = Integer.valueOf(input[i]);
+        int result=find(temp);
+        System.out.println(result);
+    }
+    public static int find(int temp[])
+    {
+        int even = 0, odd = 0;
+        for(int i=0;i<temp.length;i++)
+        {
+            if(temp[i]%2==0)
+                even++;
+            else
+                odd++;
+        }
+        if(even==temp.length)
+            return 1;
+        else if(odd==temp.length)
+            return 2;
+        else
+            return 3;
+
+    }
+
+}
