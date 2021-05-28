@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class LowerMatrix
+{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int rows, column,i,j,x=0;
+        rows=sc.nextInt();
+        column=sc.nextInt();
+        int[][] matrix=new int[rows][column] ;
+        for (i=0;i<rows;i++) {
+            for (j = 0; j < column; j++)
+                matrix[i][j] = sc.nextInt();
+        }
+        if(rows != column)
+            System.out.println("Matrix should be a square matrix");
+        else {
+            for(i = 0; i < rows; i++){
+                for(j = 0; j < column; j++){
+                    if(j < i)
+                        if(matrix[i][j]==0)
+                            x++;
+                }
+            }
+        }
+        if(x!=0)
+            System.out.println("yes");
+        else
+            System.out.println("No");
+
+    }
+}
